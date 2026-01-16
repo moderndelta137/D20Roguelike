@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  --ink: #1d1d1f;
+  --muted: #4b5563;
+  --surface: #ffffff;
+  --panel: #f5f2e8;
+  --accent: #a25b20;
+  --accent-dark: #6d3d19;
+  --grid: #e4d9c8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #f6efe6 0%, #fffaf5 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+}
+
+.app__header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.04em;
+}
+
+.app__tagline {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.board {
+  background: var(--panel);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(29, 29, 31, 0.08);
+}
+
+.board__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.board__tile {
+  aspect-ratio: 1;
+  border-radius: 0.9rem;
+  background: var(--surface);
+  border: 2px solid var(--grid);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.board__tile--hero {
+  background: var(--accent);
+  color: #fff8ef;
+  border-color: var(--accent-dark);
+}
+
+.panel__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 16px 35px rgba(29, 29, 31, 0.06);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.stat-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted);
+}
+
+.log {
+  min-height: 170px;
+  background: #fdf9f3;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #f1e6d7;
+  color: var(--muted);
+  font-size: 0.95rem;
+  overflow-y: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+button {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff8ef;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 12px 18px rgba(162, 91, 32, 0.25);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 24px rgba(162, 91, 32, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 15px rgba(162, 91, 32, 0.2);
+}
+
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+}
