@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D20 Roguelike Prototype</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>D20 Roguelike</h1>
+        <p class="app__tagline">A boardgame-inspired roguelike adventure.</p>
+      </header>
+
+      <section class="panel">
+        <div class="panel__left">
+          <div class="board">
+            <div class="board__grid" id="boardGrid" aria-label="Board grid"></div>
+          </div>
+        </div>
+        <div class="panel__right">
+          <div class="card">
+            <h2>Run Summary</h2>
+            <ul class="stat-list">
+              <li><strong>Floor:</strong> <span id="floorValue">1</span></li>
+              <li><strong>HP:</strong> <span id="hpValue">12</span></li>
+              <li><strong>Dice:</strong> <span id="diceValue">1d20</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>Log</h2>
+            <div class="log" id="logPanel"></div>
+            <div class="actions">
+              <button id="rollButton">Roll D20</button>
+              <button id="advanceButton">Advance Turn</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
